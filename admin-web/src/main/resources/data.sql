@@ -10,8 +10,8 @@ INSERT INTO orders (order_id, customer_id, order_info) values (RANDOM_UUID(), (S
 INSERT INTO orders (order_id, customer_id, order_info) values (RANDOM_UUID(), (SELECT customer_id FROM customers where name = 'Acme'), '3000 Widgets');
 INSERT INTO orders (order_id, customer_id, order_info) values (RANDOM_UUID(), (SELECT customer_id FROM customers where name = 'Callahan Auto'), '200 Widgets');
 
-INSERT INTO users (username, password, enabled) values ('user', 'passwordjdbc', true);
-INSERT INTO users (username, password, enabled) values ('admin', 'passwordjdbc', true);
+INSERT INTO users (username, password, enabled) values ('user', '{bcrypt}$2a$10$aorgbd/HFzZTHI2ArAy3nO/Yvuy8RQ4bRXLoIUHUu73fzdGlBEvUi', true);
+INSERT INTO users (username, password, enabled) values ('admin', '{bcrypt}$2a$10$aorgbd/HFzZTHI2ArAy3nO/Yvuy8RQ4bRXLoIUHUu73fzdGlBEvUi', true);
 
 INSERT INTO authorities (username, authority) values ('user', 'ROLE_USER');
 INSERT INTO authorities (username, authority) values ('admin', 'ROLE_USER');
